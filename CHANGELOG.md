@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.1.3 (2024-12-02)
+
+### Bug Fixes
+
+* fix: another fix ([`0513f7b`](https://github.com/lurcio/streamlit-list-of-links/commit/0513f7bf8fbde55ecafe877bbed7b7df3a791a26))
+
+
 ## v0.1.2 (2024-12-02)
 
 ### Bug Fixes

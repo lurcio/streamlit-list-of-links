@@ -2,7 +2,7 @@ from pathlib import Path
 
 import setuptools
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
