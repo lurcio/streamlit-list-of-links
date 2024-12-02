@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.1.4 (2024-12-02)
+
+### Bug Fixes
+
+* fix: add deployment environment ([`623c966`](https://github.com/lurcio/streamlit-list-of-links/commit/623c9666336760472d7a2b6423093d7d464a1830))
+
+
 ## v0.1.3 (2024-12-02)
 
 ### Bug Fixes
