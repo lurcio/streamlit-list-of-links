@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9, 3.10, 3.11] # Test on multiple Python versions
+        node-version: [16.x]  # Specify the Node version
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install .[tests]
+        playwright install
+
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install Node.js dependencies
+      working-directory: list_of_links/frontend
+      run: npm install
+
+    - name: Build project
+      working-directory: list_of_links/frontend
+      run: npm run build
+
+    - name: Run Python tests
+      run: pytest
