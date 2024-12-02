@@ -60,11 +60,6 @@ jobs:
         working-directory: list_of_links/frontend
         run: npm run build
 
-      - name: Run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: semantic-release publish
-
       - name: Build package
         run: python -m build
 
