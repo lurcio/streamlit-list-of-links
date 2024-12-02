@@ -2,12 +2,14 @@ from pathlib import Path
 
 import setuptools
 
+__version__ = "0.1.0"
+
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="streamlit-list-of-links",
-    version="__version__",
+    version=__version__,
     author="Marc Argent",
     author_email="margent@gmail.com",
     description="Streamlit component that renders a list of links",
