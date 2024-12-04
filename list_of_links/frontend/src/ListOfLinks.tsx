@@ -12,6 +12,12 @@ interface State {
 class ListOfLinks extends StreamlitComponentBase<State> {
   public state = { selectedLinkTarget: "" }
 
+  constructor(props: any) {
+    super(props)
+    // Set defaultLink to state when component is initialized
+    this.state = { selectedLinkTarget: this.props.args["default"] || "" }
+  }
+
   public render = (): ReactNode => {
     // Arguments that are passed to the plugin in Python are accessible
     // via `this.props.args`. Here, we access the "name" arg.

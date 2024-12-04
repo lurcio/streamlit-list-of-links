@@ -14,31 +14,34 @@ else:
     _component_func = components.declare_component("list_of_links", path=build_dir)
 
 
-def list_of_links(title, links, key=None):
+def list_of_links(title: str, links: list[tuple[str, str]], default_link=None, key=None):
     """
-    A function that interfaces with a private frontend component function.
-
-    This function facilitates interaction with a frontend component by
-    passing specified arguments. The arguments include a title and an
-    array of links, with an optional key. The function communicates these
-    to the frontend and retrieves an initial return value, which is
-    configured to be zero by default. This setup allows the returned value
-    to be modified if necessary, enabling dynamic user interactions with
-    the component.
+    Generates a component consisting of a title and a list of links. Each link is a
+    tuple containing a label and a URL. An optional default link can be specified,
+    which will be highlighted or selected by default. A key can be provided for
+    component identification and interaction tracking.
 
     Parameters
     ----------
     title : str
-        A string to set as the title of the component.
-    links : list
-        A list containing link elements to be processed by the component.
+        The title for the list of links component.
+    links : list of tuple
+        A list of tuples where each tuple consists of a label and a URL
+        for an individual link.
+    default_link : optional
+        The default link that should be highlighted or selected.
     key : optional
-        An optional parameter for component identification or tracking.
+        An optional key for identifying the component, useful for interaction
+        tracking and event handling.
 
     Returns
     -------
-    int
-        The initial value returned by the component.
+    component_value :
+        The resulting component after processing the title and list of links.
+
     """
-    component_value = _component_func(title=title, links=links, key=key, default=0)
+
+    default_link = default_link or links[0][1] if links else None
+
+    component_value = _component_func(title=title, links=links, key=key, default=default_link)
     return component_value

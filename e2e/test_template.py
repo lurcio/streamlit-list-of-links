@@ -7,7 +7,7 @@ from playwright.sync_api import Page, expect
 from e2e_utils import StreamlitRunner
 
 ROOT_DIRECTORY = Path(__file__).parent.parent.absolute()
-BASIC_EXAMPLE_FILE = ROOT_DIRECTORY / "list_of_links" / "example.py"
+BASIC_EXAMPLE_FILE = ROOT_DIRECTORY / "example.py"
 
 @pytest.fixture(autouse=True, scope="module")
 def streamlit_app():
@@ -29,9 +29,13 @@ def test_should_render_template(page: Page):
     frame_1 = page.frame_locator(
         'iframe[title="list_of_links\\.list_of_links"]'
     ).nth(1)
+    frame_2 = page.frame_locator(
+        'iframe[title="list_of_links\\.list_of_links"]'
+    ).nth(2)
 
     st_markdown_0 = page.get_by_role('paragraph').nth(0)
     st_markdown_1 = page.get_by_role('paragraph').nth(1)
+    st_markdown_2 = page.get_by_role('paragraph').nth(2)
 
     expect(st_markdown_0).to_contain_text("You chose link target 0!")
 
@@ -57,6 +61,11 @@ def test_should_render_template(page: Page):
     expect(st_markdown_0).to_contain_text("You chose link target 1!")
     expect(st_markdown_1).to_contain_text("You chose link target 0!")
 
+    expect(st_markdown_2).to_contain_text("You chose link target 1!")
+
+    frame_2.get_by_role("link", name="Charlie").click()
+
+    expect(st_markdown_2).to_contain_text("You chose link target 2!")
 
 def test_should_change_iframe_height(page: Page):
     frame = page.frame_locator('iframe[title="list_of_links\\.list_of_links"]').nth(1)

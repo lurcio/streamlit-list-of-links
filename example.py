@@ -14,3 +14,9 @@ st.subheader("Component with variable args")
 name_input = st.text_input("Enter a title", value="Streamlit")
 link_target_2 = list_of_links(name_input, people_tuples, key="foo")
 st.markdown("You chose link target %s!" % link_target_2)
+
+st.markdown("---")
+st.subheader("Component with selected link")
+
+link_target_3 = list_of_links("Hello", people_tuples, default_link="1")
+st.markdown("You chose link target %s!" % link_target_3)
