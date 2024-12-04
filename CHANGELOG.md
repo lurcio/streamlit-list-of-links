@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.1.5 (2024-12-04)
+
+### Bug Fixes
+
+* fix: Add default link target ([`14cc0d1`](https://github.com/lurcio/streamlit-list-of-links/commit/14cc0d148ee4cf7b8c2ecbaf7a10d206db7a1205))
+
+### Unknown
+
+* update ci dependencies and make publish step depend on CI ([`c50dd05`](https://github.com/lurcio/streamlit-list-of-links/commit/c50dd05fda23373cb09f445f46c3ba51434fc67f))
+
+
 ## v0.1.4 (2024-12-02)
 
 ### Bug Fixes
