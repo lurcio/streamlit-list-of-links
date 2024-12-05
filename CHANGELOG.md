@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.1.7 (2024-12-05)
+
+### Bug Fixes
+
+* fix: correct truncate css class ([`804269b`](https://github.com/lurcio/streamlit-list-of-links/commit/804269b3e673289940438e5195ed5ea8abe364b5))
+
+
 ## v0.1.6 (2024-12-05)
 
 ### Bug Fixes
