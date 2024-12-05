@@ -32,7 +32,7 @@ class ListOfLinks extends StreamlitComponentBase<State> {
           className={`group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 hover:bg-gray-800 hover:text-white ${this.state.selectedLinkTarget === link[1] ? "bg-gray-400 text-white" : "text-gray-400"}`}
           onClick={() => this.onClicked(link[1])}
         >
-          <span className={"text-truncate"}>
+          <span className={"truncate"}>
             {link[0]}
           </span>
         </a>
