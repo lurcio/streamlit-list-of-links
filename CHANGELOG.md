@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.1.6 (2024-12-05)
+
+### Bug Fixes
+
+* fix: move to tailwindcss and update styling ([`87029ea`](https://github.com/lurcio/streamlit-list-of-links/commit/87029ea782b60cb4145b6575abb1bc5ba8c146d4))
+
+
 ## v0.1.5 (2024-12-04)
 
 ### Bug Fixes
