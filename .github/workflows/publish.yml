@@ -60,7 +60,9 @@ jobs:
 
       - name: Build Node.js project
         working-directory: list_of_links/frontend
-        run: npm run build
+        run: |
+          npm run build:css
+          npm run build
 
       - name: Build package
         run: python -m build
