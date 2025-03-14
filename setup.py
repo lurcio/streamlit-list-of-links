@@ -21,7 +21,7 @@ setuptools.setup(
     classifiers=[],
     python_requires=">=3.10",
     install_requires=[
-        "streamlit >= 1.40.0",
+        "streamlit >= 1.43.0",
     ],
     extras_require={
         "tests": [
