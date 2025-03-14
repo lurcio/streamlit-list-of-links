@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.1.8 (2025-03-14)
+
+### Bug Fixes
+
+* fix: update streamlit version number ([`41c7a57`](https://github.com/lurcio/streamlit-list-of-links/commit/41c7a5723da4373fb19189dd846cc5c1c1b41310))
+
+### Unknown
+
+* sometimes links are detected as dataframes ([`ac6c47e`](https://github.com/lurcio/streamlit-list-of-links/commit/ac6c47e9d5725a59c04d428412d31ae6c107b54d))
+
+
 ## v0.1.7 (2024-12-05)
 
 ### Bug Fixes
