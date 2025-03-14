@@ -6,6 +6,8 @@ import {
 import React, { ReactNode } from "react"
 import "./index.css"
 
+type LinkItem = { subject: string; link: string };
+
 interface State {
   selectedLinkTarget: string
 }
@@ -25,15 +27,15 @@ class ListOfLinks extends StreamlitComponentBase<State> {
     const title = this.props.args["title"]
     const links = this.props.args["links"]
 
-    const listItems = links.map((link: [string, string]) => (
-      <li key={`${link[1]}`}>
+    const listItems = links.map(({ subject, link }: LinkItem) => (
+      <li key={`${link}`}>
         <a
-          href={`#${link[1]}`}
-          className={`group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 hover:bg-gray-800 hover:text-white ${this.state.selectedLinkTarget === link[1] ? "bg-gray-400 text-white" : "text-gray-400"}`}
-          onClick={() => this.onClicked(link[1])}
+          href={`#${link}`}
+          className={`group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 hover:bg-gray-800 hover:text-white ${this.state.selectedLinkTarget === link ? "bg-gray-400 text-white" : "text-gray-400"}`}
+          onClick={() => this.onClicked(link)}
         >
           <span className={"truncate"}>
-            {link[0]}
+            {subject}
           </span>
         </a>
       </li>

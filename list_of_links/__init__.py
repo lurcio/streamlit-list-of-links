@@ -41,7 +41,7 @@ def list_of_links(title: str, links: list[tuple[str, str]], default_link=None, k
 
     """
 
-    default_link = default_link or links[0][1] if links else None
+    default_link = default_link or links[0]["link"] if links else None
 
     component_value = _component_func(title=title, links=links, key=key, default=default_link)
     return component_value
